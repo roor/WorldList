@@ -9,6 +9,7 @@
 #import "WLWorldsTableViewController.h"
 #import "WLLoginViewController.h"
 #import "WLServerClient.h"
+#import "WLWorld.h"
 
 @interface WLWorldsTableViewController () <WLLoginViewControllerDelegate>
 @property (strong, nonatomic) NSArray *dataSource;
@@ -24,9 +25,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    WLLoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WLLoginViewController"];
-    loginVC.delegate = self;
-    [self presentViewController:loginVC animated:YES completion:nil];
+    if (self.dataSource == nil) {
+        WLLoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WLLoginViewController"];
+        loginVC.delegate = self;
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +48,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    WLWorld *item = self.dataSource[indexPath.row];
+    
+    cell.textLabel.text = item.name;
+    cell.detailTextLabel.text = item.worldStatus;
     
     return cell;
 }
@@ -64,7 +70,14 @@
 - (void)loginDidClicked:(WLLoginViewController *)loginViewController withLogin:(NSString *)login andPassword:(NSString *)password {
     
     [[WLServerClient sharedInstance] loginWith:login andPassword:password callback:^(NSArray *data, NSError *error) {
-        
+        if (!error) {
+            
+            self.dataSource = data;
+            
+            [self.tableView reloadData];
+            
+            [loginViewController dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
 }
 

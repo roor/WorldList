@@ -26,8 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)loginAction:(id)sender {
-    self.emailTextField.text = @"ios.test@xyrality.com";
-    self.passwordTextField.text = @"password";
+//    self.emailTextField.text = @"ios.test@xyrality.com";
+//    self.passwordTextField.text = @"password";
     
     if ([self.delegate respondsToSelector:@selector(loginDidClicked:withLogin:andPassword:)]) {
         [self.delegate loginDidClicked:self withLogin:self.emailTextField.text andPassword:self.passwordTextField.text];

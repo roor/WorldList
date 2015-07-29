@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface WLWorld : NSObject
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *mapURL;
+@property (strong, nonatomic) NSString *country;
+@property (strong, nonatomic) NSString *language;
+@property (nonatomic) NSInteger itemId;
+@property (strong, nonatomic) NSString *URL;
+@property (nonatomic) NSInteger worldStatusId;
+@property (strong, nonatomic) NSString *worldStatus;
 
 @end

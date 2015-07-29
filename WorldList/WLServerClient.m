@@ -8,6 +8,7 @@
 
 #import "WLServerClient.h"
 #import <UIKit/UIKit.h>
+#import "WLWorld.h"
 
 static NSString *serverPath = @"http://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds";
 
@@ -24,7 +25,7 @@ static NSString *serverPath = @"http://backend1.lordsandknights.com/XYRALITY/Web
     return client;
 }
 
-- (void)loginWith:(NSString *)login andPassword:(NSString *)password callback:(void (^)(NSArray *, NSError *))collback {
+- (void)loginWith:(NSString *)login andPassword:(NSString *)password callback:(void (^)(NSArray *, NSError *))callback {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     NSString *deviceType = [NSString stringWithFormat:@"%@ - %@ %@", [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemName], [[UIDevice currentDevice] systemVersion]];
     NSString *deviceID = [[NSUUID UUID] UUIDString];
@@ -46,8 +47,39 @@ static NSString *serverPath = @"http://backend1.lordsandknights.com/XYRALITY/Web
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
         NSError *error = nil;
-        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        NSPropertyListFormat plistFormat;
         
+        NSDictionary *responseDictionary = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:&plistFormat error:&error];
+
+        NSMutableArray *worlds = [NSMutableArray array];
+        
+        if (responseDictionary[@"clientCommand"]) {
+            
+            connectionError = [NSError errorWithDomain:@"WL.connection" code:1000 userInfo:@{@"info": responseDictionary[@"clientCommand"][@"message"]}];
+        }
+        else {
+        
+        
+            for (NSDictionary *worldD in responseDictionary[@"allAvailableWorlds"]) {
+                WLWorld *world = [WLWorld new];
+                world.name = worldD[@"name"];
+                world.itemId = [worldD[@"id"] integerValue];
+                world.language = worldD[@"language"];
+                world.country = worldD[@"country"];
+                world.mapURL = worldD[@"mapURL"];
+                world.URL = worldD[@"url"];
+                world.worldStatus = worldD[@"worldStatus"][@"description"];
+                world.worldStatusId = [worldD[@"worldStatus"][@"id"] integerValue];
+                
+                [worlds addObject:world];
+            }
+
+        }
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callback([worlds copy], connectionError);
+        });
     }];
 }
 

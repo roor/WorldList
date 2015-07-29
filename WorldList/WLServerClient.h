@@ -12,6 +12,6 @@
 
 + (instancetype)sharedInstance;
 
-- (void)loginWith:(NSString *)login andPassword:(NSString *)password callback:(void(^)(NSArray *data, NSError *error))collback;
+- (void)loginWith:(NSString *)login andPassword:(NSString *)password callback:(void(^)(NSArray *data, NSError *error))callback;
 
 @end
