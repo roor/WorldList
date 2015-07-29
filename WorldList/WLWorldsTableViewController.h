@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WLWorldsTableViewController.h
 //  WorldList
 //
 //  Created by Artem Podustov on 7/28/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WLWorldsTableViewController : UITableViewController
 
 @end
-

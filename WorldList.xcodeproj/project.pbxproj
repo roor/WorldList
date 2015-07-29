@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		657D566C1B6873FF00FE408A /* WLServerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D566B1B6873FF00FE408A /* WLServerClient.m */; };
 		65FCEE511B672D9100BFFA4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE501B672D9100BFFA4E /* main.m */; };
 		65FCEE541B672D9100BFFA4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE531B672D9100BFFA4E /* AppDelegate.m */; };
-		65FCEE571B672D9100BFFA4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE561B672D9100BFFA4E /* ViewController.m */; };
 		65FCEE5A1B672D9100BFFA4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FCEE581B672D9100BFFA4E /* Main.storyboard */; };
 		65FCEE5C1B672D9100BFFA4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65FCEE5B1B672D9100BFFA4E /* Images.xcassets */; };
 		65FCEE5F1B672D9100BFFA4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FCEE5D1B672D9100BFFA4E /* LaunchScreen.xib */; };
 		65FCEE6B1B672D9100BFFA4E /* WorldListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE6A1B672D9100BFFA4E /* WorldListTests.m */; };
+		65FCEE791B67300400BFFA4E /* WLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE781B67300400BFFA4E /* WLLoginViewController.m */; };
+		65FCEE7C1B67302A00BFFA4E /* WLWorldsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE7B1B67302A00BFFA4E /* WLWorldsTableViewController.m */; };
+		65FCEE7F1B67321D00BFFA4E /* WLWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FCEE7E1B67321D00BFFA4E /* WLWorld.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +30,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		657D566A1B6873FF00FE408A /* WLServerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLServerClient.h; sourceTree = "<group>"; };
+		657D566B1B6873FF00FE408A /* WLServerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLServerClient.m; sourceTree = "<group>"; };
 		65FCEE4B1B672D9100BFFA4E /* WorldList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FCEE4F1B672D9100BFFA4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FCEE501B672D9100BFFA4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65FCEE521B672D9100BFFA4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		65FCEE531B672D9100BFFA4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		65FCEE551B672D9100BFFA4E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		65FCEE561B672D9100BFFA4E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		65FCEE591B672D9100BFFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65FCEE5B1B672D9100BFFA4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		65FCEE5E1B672D9100BFFA4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		65FCEE641B672D9100BFFA4E /* WorldListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FCEE691B672D9100BFFA4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FCEE6A1B672D9100BFFA4E /* WorldListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorldListTests.m; sourceTree = "<group>"; };
+		65FCEE771B67300400BFFA4E /* WLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLLoginViewController.h; sourceTree = "<group>"; };
+		65FCEE781B67300400BFFA4E /* WLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLoginViewController.m; sourceTree = "<group>"; };
+		65FCEE7A1B67302A00BFFA4E /* WLWorldsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLWorldsTableViewController.h; sourceTree = "<group>"; };
+		65FCEE7B1B67302A00BFFA4E /* WLWorldsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLWorldsTableViewController.m; sourceTree = "<group>"; };
+		65FCEE7D1B67321D00BFFA4E /* WLWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLWorld.h; sourceTree = "<group>"; };
+		65FCEE7E1B67321D00BFFA4E /* WLWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLWorld.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +90,11 @@
 		65FCEE4D1B672D9100BFFA4E /* WorldList */ = {
 			isa = PBXGroup;
 			children = (
+				65FCEE761B672EBA00BFFA4E /* Views */,
+				65FCEE741B672E9200BFFA4E /* Controllers */,
+				65FCEE751B672EA800BFFA4E /* Models */,
 				65FCEE521B672D9100BFFA4E /* AppDelegate.h */,
 				65FCEE531B672D9100BFFA4E /* AppDelegate.m */,
-				65FCEE551B672D9100BFFA4E /* ViewController.h */,
-				65FCEE561B672D9100BFFA4E /* ViewController.m */,
-				65FCEE581B672D9100BFFA4E /* Main.storyboard */,
 				65FCEE5B1B672D9100BFFA4E /* Images.xcassets */,
 				65FCEE5D1B672D9100BFFA4E /* LaunchScreen.xib */,
 				65FCEE4E1B672D9100BFFA4E /* Supporting Files */,
@@ -117,6 +126,36 @@
 				65FCEE691B672D9100BFFA4E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65FCEE741B672E9200BFFA4E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65FCEE771B67300400BFFA4E /* WLLoginViewController.h */,
+				65FCEE781B67300400BFFA4E /* WLLoginViewController.m */,
+				65FCEE7A1B67302A00BFFA4E /* WLWorldsTableViewController.h */,
+				65FCEE7B1B67302A00BFFA4E /* WLWorldsTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		65FCEE751B672EA800BFFA4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65FCEE7D1B67321D00BFFA4E /* WLWorld.h */,
+				65FCEE7E1B67321D00BFFA4E /* WLWorld.m */,
+				657D566A1B6873FF00FE408A /* WLServerClient.h */,
+				657D566B1B6873FF00FE408A /* WLServerClient.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		65FCEE761B672EBA00BFFA4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65FCEE581B672D9100BFFA4E /* Main.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +202,7 @@
 		65FCEE431B672D9100BFFA4E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WL;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = OLEArt;
 				TargetAttributes = {
@@ -219,9 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FCEE571B672D9100BFFA4E /* ViewController.m in Sources */,
+				65FCEE791B67300400BFFA4E /* WLLoginViewController.m in Sources */,
+				65FCEE7C1B67302A00BFFA4E /* WLWorldsTableViewController.m in Sources */,
+				657D566C1B6873FF00FE408A /* WLServerClient.m in Sources */,
 				65FCEE541B672D9100BFFA4E /* AppDelegate.m in Sources */,
 				65FCEE511B672D9100BFFA4E /* main.m in Sources */,
+				65FCEE7F1B67321D00BFFA4E /* WLWorld.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +461,7 @@
 				65FCEE701B672D9100BFFA4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65FCEE711B672D9100BFFA4E /* Build configuration list for PBXNativeTarget "WorldListTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +470,7 @@
 				65FCEE731B672D9100BFFA4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
